@@ -3,10 +3,6 @@
     manager: independent
     allow-secrets: True
     trigger:
-      gerrithub:
-        - event: patchset-created
-        - event: comment-added
-          comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*(recheck|reverify)
       github:
         - event: pull_request
           action:
@@ -21,15 +17,11 @@
         status: pending
         comment: false
     success:
-      gerrithub:
-        verified: 1
       github:
         status: success
         comment: false
         status_url: &log_link "https://logs.bonnyci.org/{tenant.name}/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.ref}/"
     failure:
-      gerrithub:
-        verified: -1
       github:
         status: failure
         comment: true
@@ -43,7 +35,7 @@
       github:
         - event: pull_request
           action: status
-          status: "bonnyci[bot]:check:success"
+          status: "j2sol:check:success"
         - event: pull_request
           action: comment
           comment: (?i)^\s*gate-recheck\s*$
@@ -54,7 +46,7 @@
           action: dismissed
           state: request_changes
     require:
-      status: "bonnyci[bot]:check:success"
+      status: "j2sol:check:success"
       approval:
         - review: 2
     start:
