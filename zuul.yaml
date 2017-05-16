@@ -20,12 +20,10 @@
       github:
         status: success
         comment: false
-        status_url: &log_link "https://logs.bonnyci.org/{tenant.name}/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.ref}/"
     failure:
       github:
         status: failure
         comment: true
-        status_url: *log_link
 
 - pipeline:
     name: gate
@@ -57,13 +55,11 @@
       github:
         status: success
         comment: false
-        status_url: *log_link
         merge: false
     failure:
       github:
         status: failure
         comment: true
-        status_url: *log_link
 
 - job:
     name: base
