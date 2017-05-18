@@ -15,11 +15,11 @@
     start:
       github:
         status: pending
-        comment: false
+        comment: true
     success:
       github:
         status: success
-        comment: false
+        comment: true
     failure:
       github:
         status: failure
