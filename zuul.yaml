@@ -44,9 +44,10 @@
           action: dismissed
           state: request_changes
     require:
-      status: "j2sol:check:success"
-      approval:
-        - review: 2
+      github:
+        status: "j2sol:check:success"
+        review:
+          - type: approved
     start:
       github:
         status: pending
