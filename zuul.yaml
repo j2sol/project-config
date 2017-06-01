@@ -2,6 +2,10 @@
     name: check
     manager: independent
     allow-secrets: True
+    require:
+      github:
+        open: true
+        current-patchset: true
     trigger:
       github:
         - event: pull_request
@@ -45,6 +49,8 @@
           state: request_changes
     require:
       github:
+        open: true
+        current-patchset: true
         status: "j2sol:check:success"
         review:
           - type: approved
