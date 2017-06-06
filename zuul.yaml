@@ -1,7 +1,7 @@
 - pipeline:
     name: check
     manager: independent
-    allow-secrets: True
+    allow-secrets: False
     require:
       github:
         open: true
