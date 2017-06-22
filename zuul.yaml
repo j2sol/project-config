@@ -2,6 +2,10 @@
     name: check
     manager: independent
     allow-secrets: True
+    require:
+      github:
+        open: true
+        current-patchset: true
     trigger:
       gerrithub:
         - event: patchset-created
@@ -55,10 +59,12 @@
           state: request_changes
     require:
       github:
-        status:
-          - "bonnyci[bot]:check:success"
+        open: true
+        current-patchset: true
+        status: "bonnyci[bot]:check:success"
         review:
-          - permission: write
+          - type: approved
+            permission: write
     start:
       github:
         status: pending
