@@ -51,7 +51,8 @@
       github:
         open: true
         current-patchset: true
-        status: "j2sol:check:success"
+        #status: "j2sol:check:success"
+        label: "approved"
         review:
           - type: approved
     start:
