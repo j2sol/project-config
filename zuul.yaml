@@ -37,7 +37,7 @@
       github:
         - event: pull_request
           action: status
-          status: "j2sol:check:success"
+          status: "j2sol:z8s/check:success"
         - event: pull_request
           action: comment
           comment: (?i)^\s*gate-recheck\s*$
