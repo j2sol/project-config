@@ -78,7 +78,6 @@
 
 - job:
     name: bonnyci
-    parent: base
     nodes:
       - name: bonnyci
         label: ubuntu-xenial
