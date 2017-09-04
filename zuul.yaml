@@ -85,8 +85,8 @@
       source repositories and copying any completed logs to the log server. It
       will also set some sensible defaults that can be overridden in other
       jobs.
-    pre-run: base-pre
-    post-run: base-post
+    pre-run: playbooks/base/pre
+    post-run: playbooks/base/post
     roles:
       - zuul: openstack-infra/zuul-jobs
     success-url: https://logs.bonnyci.org/{tenant.name}/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.uuid}/{job.name}

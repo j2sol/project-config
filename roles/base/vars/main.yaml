@@ -2,3 +2,5 @@ base_console_log_port: 19885
 
 base_log_root: "/home/zuul/logs"
 base_workspace_root: "/home/zuul/workspace"
+
+base_log_dir: "{{ bonnyci_logs_dir }}/{{ zuul.tenant }}/{{ zuul.pipeline }}/{{ zuul.project.canonical_name }}/{{ zuul.change }}/{{ zuul.ref }}/{{ zuul.job }}"
