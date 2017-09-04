@@ -10,7 +10,7 @@
     - name: add-fileserver
       fileserver: "{{ bonnyci_log_ssh }}"
 
-- hosts: "{{ bonnci_log_ssh.fqdn }}"
+- hosts: "{{ bonnyci_log_ssh.fqdn }}"
   roles:
     - name: base
       base_stage: publish
