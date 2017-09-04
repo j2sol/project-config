@@ -26,7 +26,7 @@
       github:
         status: success
         comment: false
-        status-url: &log_link "https://logs.bonnyci.org/{tenant.name}/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.uuid}/"
+        status-url: &log_link "https://logs.opentech.bonnyci.org/{tenant.name}/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.uuid}/"
     failure:
       gerrithub:
         verified: -1
@@ -89,7 +89,8 @@
     post-run: playbooks/base/post
     roles:
       - zuul: openstack-infra/zuul-jobs
-    success-url: https://logs.bonnyci.org/{tenant.name}/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.uuid}/{job.name}
+    success-url: https://logs.opentech.bonnyci.org/{tenant.name}/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.uuid}/{job.name}
+    failure-url: https://logs.opentech.bonnyci.org/{tenant.name}/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.uuid}/{job.name}
     timeout: 1800
     secrets:
       - bonnyci_log_ssh
