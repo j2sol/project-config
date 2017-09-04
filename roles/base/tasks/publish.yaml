@@ -1,6 +1,6 @@
 - name: Create log directories
   file:
-    path: "{{ bonnyci_logs_dir }}"
+    path: "{{ base_log_dir }}"
     state: directory
 
 - name: Upload logs
