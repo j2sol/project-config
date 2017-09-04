@@ -1,0 +1,17 @@
+- name: Create log directories
+  file:
+    path: "{{ bonnyci_logs_dir }}"
+    state: directory
+
+- name: Upload logs
+  synchronize:
+    src: "{{ zuul.executor.log_root }}/"
+    dest: "{{ base_log_dir }}/"
+
+# - name: Return log URL to Zuul
+#   delegate_to: localhost
+#   zuul_return:
+#     data:
+#       zuul:
+#         log_url: "{{ zuul_log_url }}/{{ log_path }}/"
+#   when: zuul_log_url is defined

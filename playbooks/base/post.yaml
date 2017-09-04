@@ -1,0 +1,16 @@
+---
+- hosts: all
+  roles:
+    - name: base
+      base_stage: collect
+    - name: remove-build-sshkey
+
+- hosts: localhost
+  roles:
+    - name: add-fileserver
+      fileserver: "{{ bonnyci_log_ssh }}"
+
+- hosts: "{{ bonnci_log_ssh.fqdn }}"
+  roles:
+    - name: base
+      base_stage: publish
