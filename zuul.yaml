@@ -88,7 +88,7 @@
     pre-run: playbooks/base/pre
     post-run: playbooks/base/post
     roles:
-      - zuul: openstack-infra/zuul-jobs
+      - zuul: BonnyCI/zuul-jobs
     success-url: https://logs.opentech.bonnyci.org/{tenant.name}/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.uuid}/{job.name}
     failure-url: https://logs.opentech.bonnyci.org/{tenant.name}/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.uuid}/{job.name}
     timeout: 1800
