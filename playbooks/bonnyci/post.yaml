@@ -1,4 +1,5 @@
 - hosts: bonnyci
   roles:
     - name: bonnyci
-      bonnyci_stage: pre
+      bonnyci_stage: post
+

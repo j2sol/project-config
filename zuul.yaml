@@ -101,6 +101,9 @@
 - job:
     name: bonnyci
     parent: base
+    pre-run: playbooks/bonnyci/pre
+    run: playbooks/bonnyci/run
+    post-run: playbooks/bonnyci/post
 
 - secret:
     name: bonnyci_log_ssh

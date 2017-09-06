@@ -1,0 +1,10 @@
+---
+- template:
+    src: run-bonnyci.sh
+    dest: "{{ bonnyci_exec_dest }}"
+    mode: "0755"
+
+- command: "{{ bonnyci_exec_dest }}"
+  args:
+    chdir: "{{ zuul_work_dir }}"
+  environment: "{{ bonnyci_environment }}"

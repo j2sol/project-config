@@ -1,0 +1,5 @@
+- name: Collect logs.
+  synchronize:
+    dest: "{{ zuul.executor.log_root }}"
+    src: "{{ bonnyci_logs_dir }}"
+    mode: pull

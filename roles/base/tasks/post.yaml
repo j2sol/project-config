@@ -1,3 +1,4 @@
+---
 - name: Create log directories
   file:
     path: "{{ base_log_dir }}"

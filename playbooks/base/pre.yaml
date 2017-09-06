@@ -1,7 +1,6 @@
 - hosts: all
   roles:
     - name: add-build-sshkey
-    - name: base
-      base_stage: pre
+    - name: prepare-workspace
     - name: validate-host
       zuul_image_manifest: /etc/dib-builddate.txt

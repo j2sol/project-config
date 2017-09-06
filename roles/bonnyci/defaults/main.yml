@@ -1,1 +1,3 @@
 bonnyci_environment: {}
+
+zuul_work_dir: "src/{{ zuul.project.canonical_name }}"

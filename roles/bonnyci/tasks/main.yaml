@@ -1,14 +1,2 @@
 ---
-- debug:
-    var: hostvars
-
-- become: yes
-  template:
-    src: run-bonnyci.sh
-    dest: "{{ bonnyci_exec_dest }}"
-    mode: "0755"
-
-- command: "{{ bonnyci_exec_dest }}"
-  args:
-    chdir: "{{ bonnyci_workspace_root }}/src/{{ zuul.project.canonical_name }}"
-  environment: "{{ bonnyci_environment }}"
+- include: "{{ bonnyci_stage | mandatory }}.yaml"

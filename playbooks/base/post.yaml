@@ -1,8 +1,6 @@
 ---
 - hosts: all
   roles:
-    - name: base
-      base_stage: collect
     - name: remove-build-sshkey
 
 - hosts: localhost
@@ -13,4 +11,4 @@
 - hosts: "{{ bonnyci_log_ssh.fqdn }}"
   roles:
     - name: base
-      base_stage: publish
+      base_stage: post
