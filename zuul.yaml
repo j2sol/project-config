@@ -94,9 +94,10 @@
     timeout: 1800
     secrets:
       - bonnyci_log_ssh
-    nodes:
-      - name: bonnyci
-        label: ubuntu-xenial
+    nodeset:
+      nodes:
+        - name: bonnyci
+          label: ubuntu-xenial
 
 - job:
     name: bonnyci
