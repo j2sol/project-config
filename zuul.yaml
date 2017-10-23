@@ -79,6 +79,7 @@
 
 - job:
     name: bonnyci
-    nodes:
-      - name: bonnyci
-        label: ubuntu-xenial
+    nodeset:
+      nodes:
+        - name: bonnyci
+          label: ubuntu-xenial
